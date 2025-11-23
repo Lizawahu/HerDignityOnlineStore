@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Products - Her Dignity Store</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">Her Dignity</div>
+    <div class="nav-toggle" onclick="toggleNav()">☰</div>
+<nav id="main-nav">
+  <a href="index.html">Home</a>
+  <a href="products.html">Products</a>
+  <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+</nav>
+  </header>
+
+  <main class="products-page">
+    <h2>Explore Our Products</h2>
+
+    <!-- Filter Controls -->
+    <div class="filter-wrapper">
+      <button id="toggle-filters">Filters ▾</button>
+      <div class="filters" id="filters-panel">
+        <input type="text" id="search" placeholder="Search by name..." />
+        <select id="category-filter" title="Filter by category">
+          <option value="">All Categories</option>
+          <option value="clothing">Clothing</option>
+          <option value="accessories">Accessories</option>
+          <option value="books">Books</option>
+        </select>
+        <select id="price-filter" title="Filter by price">
+          <option value="">All Prices</option>
+          <option value="under-1000">Under KES 1000</option>
+          <option value="1000-2000">KES 1000–2000</option>
+          <option value="over-2000">Over KES 2000</option>
+        </select>
+        <label for="sort-filter" class="visually-hidden">Sort Products</label>
+        <select id="sort-filter" title="Sort Products">
+          <option value="">Sort By</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="name-asc">Name: A–Z</option>
+          <option value="name-desc">Name: Z–A</option>
+        </select>
+        <button id="clear-filters">Clear Filters</button>
+      </div>
+    </div>
+
+    <!-- Filter Summary -->
+    <div id="filter-summary" class="filter-summary"></div>
+
+    <!-- Product Grid -->
+    <div class="product-grid" id="product-list"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Her Dignity Store</p>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="product.js"></script>
+</body>
+</html>

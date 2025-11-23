@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order Confirmation - Her Dignity Store</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">Her Dignity</div>
+   <div class="nav-toggle" onclick="toggleNav()">☰</div>
+<nav id="main-nav">
+  <a href="index.html">Home</a>
+  <a href="products.html">Products</a>
+  <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+</nav>
+  </header>
+
+  <main class="confirmation-container">
+    <!-- Success Animation -->
+    <div class="success-animation">
+      <svg viewBox="0 0 52 52">
+        <circle class="circle" cx="26" cy="26" r="25" fill="none" />
+        <path class="check" fill="none" d="M14 27l7 7 16-16" />
+      </svg>
+    </div>
+
+    <h2>Thank You for Your Order!</h2>
+    <p>Your payment was successful and your order is being processed.</p>
+    <p>You’ll receive a confirmation email shortly with your order details.</p>
+
+    <div class="confirmation-actions">
+      <a href="products.html"><button>Continue Shopping</button></a>
+      <a href="index.html"><button>Back to Home</button></a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Her Dignity Store</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
