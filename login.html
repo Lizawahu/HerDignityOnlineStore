@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Her Dignity Store</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">Her Dignity</div>
+    <div class="nav-toggle" onclick="toggleNav()">☰</div>
+<nav id="main-nav">
+  <a href="index.html">Home</a>
+  <a href="products.html">Products</a>
+  <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+  <button class="login-btn" onclick="openLoginModal()">Login</button>
+</nav>
+  </header>
+
+  <main class="form-container">
+    <h2>Login</h2>
+    <form id="login-form">
+      <input type="email" id="login-email" placeholder="Email" required />
+      <input type="password" id="login-password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Her Dignity Store</p>
+  </footer>
+
+  <script src="auth.js"></script>
+  <!-- Auth Modal -->
+ <div class="modal-overlay" id="auth-modal">
+  <div class="auth-modal">
+    <button class="close-modal" onclick="closeModal()">×</button>
+    
+    <div class="auth-tabs">
+      <button class="auth-tab active" data-tab="login" onclick="switchTab('login')">Login</button>
+      <button class="auth-tab" data-tab="register" onclick="switchTab('register')">Create Account</button>
+    </div>
+
+    <form id="login-form" class="auth-form active" onsubmit="handleLogin(event)">
+      <input type="email" id="login-email" placeholder="Email Address" required>
+      <input type="password" id="login-password" placeholder="Password" required>
+      <div class="form-error"></div>
+      <button type="submit">Login</button>
+      <div class="auth-switch">
+        Don't have an account? <a onclick="switchTab('register')">Sign up</a>
+      </div>
+    </form>
+
+    <form id="register-form" class="auth-form" onsubmit="handleRegister(event)">
+      <input type="text" id="register-name" placeholder="Full Name" required>
+      <input type="email" id="register-email" placeholder="Email Address" required>
+      <input type="password" id="register-password" placeholder="Password" required>
+      <input type="password" id="register-confirm-password" placeholder="Confirm Password" required>
+      <div class="form-error"></div>
+      <button type="submit">Create Account</button>
+      <div class="auth-switch">
+        Already have an account? <a onclick="switchTab('login')">Login</a>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "name": "Empower Tee",
+    "category": "clothing",
+    "price": 1200,
+    "image": "assets/tee.jpg",
+    "description": "This soft, empowering tee is more than fashion — it’s a statement. Every purchase supports girls’ education and menstrual dignity."
+  },
+  {
+    "id": 2,
+    "name": "Dignity Bracelet",
+    "category": "accessories",
+    "price": 800,
+    "image": "assets/bracelet.jpg",
+    "description": "Handcrafted with love, this bracelet symbolizes strength and solidarity. Wear it proudly."
+  },
+  {
+    "id": 3,
+    "name": "Her Story Book",
+    "category": "books",
+    "price": 1500,
+    "image": "assets/book.jpg",
+    "description": "A powerful collection of stories from girls who’ve overcome adversity and found their voice."
+  },
+  {
+    "id": 4,
+    "name": "Hope Hoodie",
+    "category": "clothing",
+    "price": 2200,
+    "image": "assets/hoodie.jpg",
+    "description": "Warm, stylish, and bold — this hoodie wraps you in comfort and purpose."
+  }
+,
+  {
+    "id": 1,
+    "name": "Empowered Women Tee",
+    "category": "clothing",
+    "price": 1200,
+    "image": "assets/empowered-tee.jpg",
+    "description": "Pink tee with bold 'Empowered Women Empower Women' text. Soft, stylish, and purpose-driven."
+  },
+  {
+    "id": 2,
+    "name": "Actually I Can Shirt",
+    "category": "clothing",
+    "price": 1300,
+    "image": "assets/actually-i-can.jpg",
+    "description": "Minimalist white shirt with 'Actually I Can' typography. A daily reminder of strength."
+  },
+  {
+    "id": 3,
+    "name": "Strong Women Graphic Tee",
+    "category": "clothing",
+    "price": 1500,
+    "image": "assets/strong-women.jpg",
+    "description": "Black tee featuring illustrated icons of powerful women. Bold and expressive."
+  },
+  {
+    "id": 4,
+    "name": "Beaded Daisy Bracelet",
+    "category": "accessories",
+    "price": 800,
+    "image": "assets/daisy-bracelet.jpg",
+    "description": "Colorful handmade bracelet with daisy beads. Symbolizes joy and sisterhood."
+  },
+  {
+    "id": 5,
+    "name": "Boho Leather Wrap",
+    "category": "accessories",
+    "price": 950,
+    "image": "assets/boho-wrap.jpg",
+    "description": "Earth-tone leather wrap bracelet with metal accents. Rustic and empowering."
+  },
+  {
+    "id": 6,
+    "name": "Silver Charm Cuff",
+    "category": "accessories",
+    "price": 1100,
+    "image": "assets/silver-cuff.jpg",
+    "description": "Sleek silver cuff with empowerment charms. Elegant and meaningful."
+  },
+  {
+    "id": 7,
+    "name": "Girls Can Do Anything",
+    "category": "books",
+    "price": 1500,
+    "image": "assets/girls-anything.jpg",
+    "description": "Illustrated book celebrating girls' potential and power. A must-read for every young dreamer."
+  },
+  {
+    "id": 8,
+    "name": "Empowered Girls Workbook",
+    "category": "books",
+    "price": 1800,
+    "image": "assets/empowered-workbook.jpg",
+    "description": "Activity book with affirmations, prompts, and creative exercises for self-discovery."
+  },
+  {
+    "id": 9,
+    "name": "Girls Can Be Anything",
+    "category": "books",
+    "price": 1600,
+    "image": "assets/girls-anything-book.jpg",
+    "description": "Bright, bold book inspiring girls to dream big and break barriers."
+  }
+]

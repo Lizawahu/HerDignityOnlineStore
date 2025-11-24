@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Payment - Her Dignity Store</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="payment.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">Her Dignity</div>
+    <div class="nav-toggle" onclick="toggleNav()">☰</div>
+    <nav id="main-nav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+      <button class="login-btn" onclick="openLoginModal()">Login</button>
+    </nav>
+  </header>
+
+  <main class="payment-page">
+    <div class="payment-header">
+      <h2>Checkout</h2>
+      <div class="checkout-steps">
+        <div class="step completed">Cart</div>
+        <div class="step active">Shipping & Payment</div>
+        <div class="step">Confirmation</div>
+      </div>
+    </div>
+
+    <div class="payment-content">
+      <div class="order-summary-section">
+        <h3>Order Summary</h3>
+        <div id="payment-cart-items" class="payment-cart-items">
+          <!-- Cart items will be dynamically inserted here -->
+        </div>
+        <div class="payment-summary">
+          <div class="summary-line">
+            <span>Subtotal</span>
+            <span id="payment-subtotal">KES 0</span>
+          </div>
+          <div class="summary-line">
+            <span>Shipping</span>
+            <span id="payment-shipping">KES 200</span>
+          </div>
+          <div class="summary-line total">
+            <span>Total</span>
+            <span id="payment-total">KES 0</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="payment-form-section">
+        <form id="payment-form" class="payment-form">
+          <div class="form-section">
+            <h3>Shipping Information</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Enter your full name" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="Enter your phone number" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="address">Street Address</label>
+                <input type="text" id="address" placeholder="Enter your street address" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" placeholder="Enter your city" required />
+              </div>
+              <div class="form-group">
+                <label for="zip">Postal Code</label>
+                <input type="text" id="zip" placeholder="Postal code" required />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>Payment Method</h3>
+            <div class="payment-methods">
+              <div class="payment-method">
+                <input type="radio" id="card" name="payment-method" value="card" checked />
+                <label for="card">Credit/Debit Card</label>
+              </div>
+              <div class="payment-method">
+                <input type="radio" id="mpesa" name="payment-method" value="mpesa" />
+                <label for="mpesa">M-Pesa</label>
+              </div>
+            </div>
+
+            <div id="card-payment" class="payment-details">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="card-name">Name on Card</label>
+                  <input type="text" id="card-name" placeholder="Enter name as on card" required />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="card-number">Card Number</label>
+                  <input type="text" id="card-number" placeholder="1234 5678 9012 3456" maxlength="19" required />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="expiry">Expiry Date</label>
+                  <input type="text" id="expiry" placeholder="MM/YY" maxlength="5" required />
+                </div>
+                <div class="form-group">
+                  <label for="cvv">CVV</label>
+                  <input type="text" id="cvv" placeholder="123" maxlength="3" required />
+                </div>
+              </div>
+            </div>
+
+            <div id="mpesa-payment" class="payment-details" style="display: none;">
+              <div class="mpesa-info">
+                <p>You will receive an M-Pesa prompt on your phone to complete the payment.</p>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="mpesa-phone">M-Pesa Phone Number</label>
+                    <input type="tel" id="mpesa-phone" placeholder="07XX XXX XXX" required />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <a href="cart.html" class="back-to-cart">← Back to Cart</a>
+            <button type="submit" class="pay-now-btn">
+              <span class="btn-text">Pay KES <span id="pay-amount">0</span></span>
+              <span class="btn-loading" style="display: none;">Processing...</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Her Dignity Store. Empowering women through fashion and knowledge.</p>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="auth.js"></script>
+  <script src="payment.js"></script>
+  <!-- Auth Modal -->
+ <div class="modal-overlay" id="auth-modal">
+  <div class="auth-modal">
+    <button class="close-modal" onclick="closeModal()">×</button>
+    
+    <div class="auth-tabs">
+      <button class="auth-tab active" data-tab="login" onclick="switchTab('login')">Login</button>
+      <button class="auth-tab" data-tab="register" onclick="switchTab('register')">Create Account</button>
+    </div>
+
+    <form id="login-form" class="auth-form active" onsubmit="handleLogin(event)">
+      <input type="email" id="login-email" placeholder="Email Address" required>
+      <input type="password" id="login-password" placeholder="Password" required>
+      <div class="form-error"></div>
+      <button type="submit">Login</button>
+      <div class="auth-switch">
+        Don't have an account? <a onclick="switchTab('register')">Sign up</a>
+      </div>
+    </form>
+
+    <form id="register-form" class="auth-form" onsubmit="handleRegister(event)">
+      <input type="text" id="register-name" placeholder="Full Name" required>
+      <input type="email" id="register-email" placeholder="Email Address" required>
+      <input type="password" id="register-password" placeholder="Password" required>
+      <input type="password" id="register-confirm-password" placeholder="Confirm Password" required>
+      <div class="form-error"></div>
+      <button type="submit">Create Account</button>
+      <div class="auth-switch">
+        Already have an account? <a onclick="switchTab('login')">Login</a>
+      </div>
+    </form>
+  </div>
+</div>
+  
+</body>
+</html>

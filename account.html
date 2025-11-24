@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Account - Her Dignity Store</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="account.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">Her Dignity</div>
+    <div class="nav-toggle" onclick="toggleNav()">☰</div>
+    <nav id="main-nav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html">Cart (<span id="cart-count">0</span>)</a>
+      <button class="login-btn" onclick="openLoginModal()">Login</button>
+    </nav>
+  </header>
+
+  <main class="account-page">
+    <div class="account-header">
+      <h2>My Account</h2>
+      <button class="logout-btn" onclick="auth.logout()">Logout</button>
+    </div>
+
+    <div class="account-content">
+      <div class="account-sidebar">
+        <div class="user-info">
+          <div class="user-avatar">
+            <span id="user-avatar">👤</span>
+          </div>
+          <h3 id="user-name">Loading...</h3>
+          <p id="user-email">Loading...</p>
+          <p class="member-since">Member since <span id="join-date">Loading...</span></p>
+        </div>
+        
+        <nav class="account-nav">
+          <a href="#profile" class="nav-item active" data-tab="profile">Profile</a>
+          <a href="#orders" class="nav-item" data-tab="orders">Order History</a>
+          <a href="#addresses" class="nav-item" data-tab="addresses">Addresses</a>
+          <a href="#wishlist" class="nav-item" data-tab="wishlist">Wishlist</a>
+        </nav>
+      </div>
+
+      <div class="account-main">
+        <!-- Profile Tab -->
+        <div id="profile" class="account-tab active">
+          <h3>Profile Information</h3>
+          <form class="profile-form" onsubmit="updateProfile(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="profile-name" required>
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="profile-email" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" id="profile-phone">
+              </div>
+              <div class="form-group">
+                <label>Date of Birth</label>
+                <input type="date" id="profile-dob">
+              </div>
+            </div>
+            <button type="submit" class="save-btn">Save Changes</button>
+          </form>
+        </div>
+
+        <!-- Orders Tab -->
+        <div id="orders" class="account-tab">
+          <h3>Order History</h3>
+          <div class="orders-list" id="orders-list">
+            <!-- Orders will be dynamically inserted here -->
+          </div>
+        </div>
+
+        <!-- Addresses Tab -->
+        <div id="addresses" class="account-tab">
+          <h3>Saved Addresses</h3>
+          <div class="addresses-list" id="addresses-list">
+            <!-- Addresses will be dynamically inserted here -->
+          </div>
+          <button class="add-address-btn" onclick="openAddressModal()">Add New Address</button>
+        </div>
+
+        <!-- Wishlist Tab -->
+        <div id="wishlist" class="account-tab">
+          <h3>My Wishlist</h3>
+          <div class="wishlist-grid" id="wishlist-grid">
+            <!-- Wishlist items will be dynamically inserted here -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Add Address Modal -->
+  <div class="modal-overlay" id="address-modal">
+    <div class="auth-modal">
+      <button class="close-modal" onclick="closeAddressModal()">×</button>
+      <h3>Add New Address</h3>
+      <form id="address-form" onsubmit="saveAddress(event)">
+        <input type="text" id="address-name" placeholder="Address Name (e.g., Home, Work)" required>
+        <input type="text" id="address-street" placeholder="Street Address" required>
+        <input type="text" id="address-city" placeholder="City" required>
+        <input type="text" id="address-zip" placeholder="Postal Code" required>
+        <input type="text" id="address-country" placeholder="Country" value="Kenya" required>
+        <button type="submit">Save Address</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Her Dignity Store. Empowering women through fashion and knowledge.</p>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="auth.js"></script>
+  <script src="account.js"></script>
+</body>
+</html>

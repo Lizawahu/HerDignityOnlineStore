@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shopping Cart - Her Dignity Store</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="cart.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">Her Dignity</div>
+    <div class="nav-toggle" onclick="toggleNav()">☰</div>
+    <nav id="main-nav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html" class="active">Cart (<span id="cart-count">0</span>)</a>
+      <button class="login-btn" onclick="openLoginModal()">Login</button>
+    </nav>
+  </header>
+
+  <main class="cart-page">
+    <div class="cart-header">
+      <h2>Your Shopping Cart</h2>
+      <p class="cart-subtitle">Review your items and proceed to checkout</p>
+    </div>
+
+    <div class="cart-content">
+      <div class="cart-items-section">
+        <div id="cart-items" class="cart-items">
+          <!-- Cart items will be dynamically inserted here -->
+        </div>
+        
+        <div class="empty-cart" id="empty-cart">
+          <div class="empty-cart-icon">🛒</div>
+          <h3>Your cart is empty</h3>
+          <p>Browse our products and add items to get started</p>
+          <a href="products.html" class="continue-shopping-btn">Continue Shopping</a>
+        </div>
+      </div>
+
+      <div class="cart-summary-section">
+        <div class="order-summary">
+          <h3>Order Summary</h3>
+          <div class="summary-line">
+            <span>Subtotal</span>
+            <span id="subtotal">KES 0</span>
+          </div>
+          <div class="summary-line">
+            <span>Shipping</span>
+            <span id="shipping">KES 200</span>
+          </div>
+          <div class="summary-line total">
+            <span>Total</span>
+            <span id="cart-total">KES 0</span>
+          </div>
+          <button class="checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+          <a href="products.html" class="continue-shopping-link">← Continue Shopping</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Her Dignity Store. Empowering women through fashion and knowledge.</p>
+  </footer>
+
+  
+  <script src="main.js"></script>
+  <script src="cart.js"></script>
+  <script src="auth.js"></script>
+<div class="modal-overlay" id="auth-modal">
+  <div class="auth-modal">
+    <button class="close-modal" onclick="closeModal()">×</button>
+    
+    <div class="auth-tabs">
+      <button class="auth-tab active" data-tab="login" onclick="switchTab('login')">Login</button>
+      <button class="auth-tab" data-tab="register" onclick="switchTab('register')">Create Account</button>
+    </div>
+
+    <form id="login-form" class="auth-form active" onsubmit="handleLogin(event)">
+      <input type="email" id="login-email" placeholder="Email Address" required>
+      <input type="password" id="login-password" placeholder="Password" required>
+      <div class="form-error"></div>
+      <button type="submit">Login</button>
+      <div class="auth-switch">
+        Don't have an account? <a onclick="switchTab('register')">Sign up</a>
+      </div>
+    </form>
+
+    <form id="register-form" class="auth-form" onsubmit="handleRegister(event)">
+      <input type="text" id="register-name" placeholder="Full Name" required>
+      <input type="email" id="register-email" placeholder="Email Address" required>
+      <input type="password" id="register-password" placeholder="Password" required>
+      <input type="password" id="register-confirm-password" placeholder="Confirm Password" required>
+      <div class="form-error"></div>
+      <button type="submit">Create Account</button>
+      <div class="auth-switch">
+        Already have an account? <a onclick="switchTab('login')">Login</a>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>
